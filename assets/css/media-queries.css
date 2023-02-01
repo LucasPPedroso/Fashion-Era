@@ -1,0 +1,646 @@
+@media (min-width: 575.98px) {
+    .poster-info h3 {
+        font-size: 18px;
+        font-weight: normal;
+        opacity: .5;
+    }
+
+    .poster-info h1 {
+        font-size: 31px;
+        font-weight: 900;
+        color: #323232;
+        line-height: 35px;
+    }
+
+    .shop-btn {
+        background-color: #004743;
+        color: #fff;
+        font-weight: bold;
+        padding: 16px 32px;
+        border-radius: 100px;
+        font-size: 16px;
+        transition: all .3s;
+    }
+
+    .models {
+        width: 85%;
+    }
+
+    .mens-off, .womens-off {
+        overflow-x: hidden;
+    }
+
+    .off-info {
+        padding: 25px;
+    }
+
+    .off-info h4 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .off-info p {
+        font-size: 20px;
+        margin: 25px 0;
+    }
+
+    .adults-off-btn {
+        padding: 11px 30px;
+        font-size: 15px;
+    }
+
+    .kids-off {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        border-radius: 20px;
+        padding: 10px 5px 0 15px;
+        color: #004743;
+        margin: 15px auto;
+    }
+
+    .kids-off-img {
+        width: 50%;
+    }
+
+
+    .kids-off-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .kids-off-info h4 {
+        margin: 25px auto;
+    }
+
+    .kids-off-btn {
+        font-size: 14px;
+        padding: 10px 25px;
+    }
+
+    .kids-sale-info {
+        width: 187px;
+        height: 80px;
+    }
+
+    .arrivals-header h3, .trending-header h3, .reviews-header h3 {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .arrivals-header p, .trending-header p, .reviews-header p {
+        font-size: 11px;
+    }
+
+    .arrivals-filter-btn {
+        font-size: 11px;
+    }
+
+    .splide__slide:not(.review-slide) {
+        width: 46.5% !important;
+    }
+
+    .brands-logo div {
+        width: calc(30% - 10px);
+        margin: 10px 5px;
+    }
+
+    .top-brands-header h3 {
+        margin: 10px auto 10px auto;
+        font-size: 25px;
+    }
+
+    .top-brands {
+        padding: 15px 10px;
+        margin-top: 20px;
+    }
+
+    .user-review {
+        flex-direction: row;
+    }
+
+    .review-text p {
+        font-size: 13px;
+    }
+
+    .user-name {
+        font-size: 15px;
+    }
+
+    .review-slide {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .reviews__arrow {
+        bottom: 0;
+        position: absolute;
+        right: 0;
+    }
+
+    .subscribe-header img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .subscribe-header h3 {
+        font-size: 20px;
+    }
+
+    .subscribe-input {
+        padding: 20px 25px;
+        width: 400px;
+    }
+
+    .paper-plane {
+        top: 3px;
+    }
+
+    .paper-plane {
+        right: 4px;
+        width: 49px;
+        height: 49px;
+    }
+
+
+}
+
+@media (min-width: 767.98px) {
+    .models {
+        width: 75%;
+    }
+
+    .main-menu {
+        display: flex;
+    }
+
+    .top-menu, .bottom-menu {
+        display: none !important;
+    }
+
+    .poster-info h1 {
+        line-height: 40px;
+    }
+
+    .kids-off-info h4 {
+        font-size: 32px;
+        margin: 0 auto 50px auto;
+    }
+
+    .kids-sale-info {
+        width: 255px;
+        height: 110px;
+    }
+
+    .kids-sale-info h3 {
+        font-size: 45px;
+        line-height: 20px;
+    }
+
+    .kids-off-info p {
+        font-size: 15px;
+    }
+
+    .kids-off-btn {
+        font-size: 15px;
+        padding: 10px 40px;
+    }
+
+    .arrivals-header h3, .trending-header h3, .reviews-header h3 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    .arrivals-filter-btn {
+        font-size: 13px;
+        padding: 5px 20px;
+    }
+
+    .grouping span {
+        font-size: 15px;
+    }
+
+    .item-price p {
+        font-size: 20px;
+    }
+
+    .item-price span {
+        font-size: 17px;
+    }
+
+    .top-brands-header h3 {
+        margin: 10px auto 15px auto;
+        font-size: 30px;
+    }
+
+    .top-brands-header p {
+        font-size: 14px;
+    }
+
+    .top-brands {
+        margin-top: 20px;
+    }
+
+    .arrivals-header p, .trending-header p, .reviews-header p {
+        font-size: 14px;
+    }
+
+    .review-text p {
+        font-size: 16px;
+    }
+
+    .user-name {
+        font-size: 18px;
+    }
+
+    .subscribe-header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .subscribe-header h3 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .subscribe-header p {
+        font-size: 14px;
+    }
+
+    .subscribe-input {
+        padding: 25px 25px;
+        width: 500px;
+        font-size: 15px;
+    }
+
+    .paper-plane {
+        right: 5px;
+        width: 59px;
+        height: 59px;
+    }
+
+    .paper-plane {
+        top: 4px;
+    }
+
+    .footer-container {
+        flex-direction: row;
+    }
+
+    .footer-info {
+        width: 30%;
+        /*margin: auto 10px;*/
+    }
+
+    .footer-info-text p {
+        margin-bottom: 0;
+    }
+
+    .footer-help, .footer-store, .footer-support {
+        width: 22%;
+        margin: auto 10px;
+    }
+
+    .footer-store {
+        margin-right: -5px !important;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .lg-list-item {
+        margin: 5px 15px;
+    }
+
+    .shopping-card-btn, .manage-profile, .favorites-btn {
+        margin: 0 15px;
+    }
+
+    .header-poster {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 30px 0;
+    }
+
+    .models {
+        width: 70%;
+    }
+
+    .bg-photo {
+        width: 90%;
+    }
+
+    .poster-info h3 {
+        font-size: 25px;
+    }
+
+    .poster-info h1 {
+        line-height: 55px;
+        font-size: 45px;
+    }
+
+    .shop-btn {
+        padding: 15px 35px;
+        font-size: 15px;
+    }
+
+    .benefits-container {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+        margin: 40px auto;
+    }
+
+    .off-info h4 {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .adults-off-btn {
+        font-size: 17px;
+    }
+
+    .kids-off-info h4 {
+        font-size: 42px;
+    }
+
+    .kids-sale-info {
+        width: 320px;
+        height: 140px;
+    }
+
+    .kids-sale-info h3 {
+        font-size: 65px;
+    }
+
+    .kids-sale-info p {
+        font-size: 20px;
+    }
+
+    .kids-off-btn {
+        font-size: 18px;
+        padding: 14px 50px;
+    }
+
+    .arrivals-header h3, .trending-header h3, .reviews-header h3 {
+        font-size: 55px;
+        line-height: 55px;
+    }
+
+    .arrivals-header p, .trending-header p, .reviews-header p {
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    .arrivals-filter-btn {
+        font-size: 15px;
+        padding: 7px 30px;
+    }
+
+    .splide__slide:not(.review-slide) {
+        width: 48% !important;
+    }
+
+    .grouping span {
+        font-size: 20px;
+    }
+
+    .item-name p {
+        font-size: 20px;
+    }
+
+    .item-price p {
+        font-size: 25px;
+    }
+
+    .item-price span {
+        font-size: 20px;
+    }
+
+    .splide__list {
+        margin-bottom: 60px !important;
+    }
+
+    .splide__arrow {
+        width: 45px;
+        height: 45px;
+    }
+
+    .brands-logo div {
+        width: calc(20% - 10px);
+    }
+
+    .top-brands {
+        padding: 25px 40px;
+    }
+
+    .top-brands-header h3 {
+        margin: 10px auto 20px auto;
+        font-size: 35px;
+    }
+
+    .top-brands-header p {
+        font-size: 16px;
+    }
+
+    .review-text p {
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    .user-name {
+        font-size: 20px;
+    }
+
+    .subscribe-header img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .subscribe-header h3 {
+        font-size: 30px;
+    }
+
+    .subscribe-header p {
+        font-size: 16px;
+    }
+
+    .subscribe-input {
+        font-size: 17px;
+    }
+
+    .paper-plane {
+        top: 5px;
+    }
+
+    .footer-info {
+    width: 30%;
+    margin: auto 20px auto 0;
+    }
+}
+
+@media (min-width: 1199.98px) {
+    .menu {
+        align-items: center;
+    }
+
+    .main-menu {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 15px;
+        width: 90%;
+    }
+
+    .lg-list-item {
+        margin: 5px 20px;
+    }
+
+    .benefits-container {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .adults-off {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .mens-off, .womens-off {
+        margin: 15px;
+    }
+
+    .kids-off-info h4 {
+        font-size: 51px;
+    }
+
+    .kids-off-info h4 {
+        font-size: 51px;
+    }
+
+    .kids-sale-info {
+        width: 424px;
+        height: 185px;
+    }
+
+    .kids-sale-info h3 {
+        font-size: 80px;
+    }
+
+    .kids-sale-info p {
+        font-size: 25px;
+    }
+
+    .kids-off-btn {
+        font-size: 20px;
+        padding: 20px 55px;
+    }
+
+    .arrivals-header h3, .trending-header h3, .reviews-header h3 {
+        font-size: 60px;
+        line-height: 69px;
+    }
+
+    .arrivals-header p, .trending-header p, .reviews-header p {
+        font-size: 20px;
+    }
+
+    .splide__slide:not(.review-slide) {
+        width: 31% !important;
+    }
+
+    .item-name p {
+        font-size: 24px;
+    }
+
+    .item-price p {
+        font-size: 30px;
+    }
+
+    .item-price span {
+        font-size: 25px;
+    }
+
+    .splide__list {
+        margin-bottom: 70px !important;
+    }
+
+    .top-brands {
+        padding: 25px 80px;
+    }
+
+    .brands-logo {
+        margin-top: 40px !important;
+    }
+
+    .top-brands-header h3 {
+        margin: 10px auto 25px auto;
+        font-size: 45px;
+    }
+
+    .top-brands-header p {
+        font-size: 19px;
+    }
+
+    .review-text p {
+        font-size: 20px;
+    }
+
+    .user-name {
+        font-size: 22px;
+    }
+
+    .subscribe-header p {
+        font-size: 18px;
+    }
+
+    .subscribe-input {
+        padding: 30px 25px;
+        width: 600px;
+    }
+
+    .paper-plane {
+        right: 7px;
+        width: 67px;
+        height: 68px;
+    }
+
+    .subscribe-input {
+        font-size: 19px;
+    }
+
+    .paper-plane {
+        top: 7px;
+    }
+
+    .facebook, .twitter, .instagram {
+        padding: 10px 14px;
+    }
+
+    .footer-info {
+        margin: 5px 20px 0 0;
+    }
+}
+
+@media (min-width: 1399.98px) {
+    .splide__slide:not(.review-slide) {
+        width: 23% !important;
+    }
+
+    .splide__list {
+        margin-bottom: 80px !important;
+    }
+
+    .top-brands-header p {
+        font-size: 20px;
+    }
+
+    .subscribe-header p {
+        font-size: 20px;
+    }
+}
