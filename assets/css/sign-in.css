@@ -1,0 +1,182 @@
+html, body, .container, main {
+    height: 100%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F7F7F7;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.sign-in-header-logo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0 0 0;
+    margin: 15px 0 0 0;
+}
+
+form input {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.name input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid rgba(221, 221, 221);
+}
+
+.email {
+    width: 100%;
+    margin: auto auto 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.email input:not([type="checkbox"]) {
+    width: 95%;
+    margin: auto auto 15px auto;
+    -webkit-appearance: none;
+    border: 1px solid rgba(221, 221, 221);
+}
+
+.show-password-wrapper {
+    margin: auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.show-password-wrapper span {
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.help {
+    display: flex;
+    flex-direction: column;
+    margin: auto auto 15px 5px;
+}
+
+.help span {
+    font-size: 13px;
+}
+
+.help a {
+    font-size: 14px;
+    color: #2997ff;
+    transition: all 0.3s;
+}
+
+.help a:hover {
+    color: #FBD103;
+}
+
+.button-wrapper {
+    margin-left: 4px;
+}
+
+.button-wrapper button {
+    background-color: #004743;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 100px;
+    font-size: 13px;
+    transition: all .3s;
+}
+
+.button-wrapper button:hover {
+    background-color: #065f5b;
+}
+
+.first-name-wrapper, .last-name-wrapper {
+    position: relative;
+    width: calc(50% - 15px);
+}
+
+.email-wrapper, .password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.first-name, .last-name, .email-label, .password-label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 22px;
+    font-size: 13px;
+    opacity: 0.5;
+    transition: all 0.3s;
+    user-select: none;
+    background-color: #F7F7F7;
+    pointer-events: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+input:focus + .first-name,
+input:focus + .last-name,
+input:focus + .email-label,
+input:focus + .password-label,
+input:valid + .first-name,
+input:valid + .last-name,
+input:valid + .password-label,
+input:valid + .email-label {
+    top: -15px !important;
+    left: 14px !important;
+    opacity: 1 !important;
+    font-size: 11px !important;
+}
+
+input:focus {
+    border: 2px solid #5d5d5d !important;
+}
+
+.first-name-wrapper {
+    margin-right: 5px;
+}
+
+.last-name-wrapper {
+    margin-left: 5px;
+}
+
+@media (min-width: 575.98px) {
+    form h3 {
+        font-size: 20px;
+    }
+
+    .first-name-wrapper, .last-name-wrapper {
+        position: relative;
+        width: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 1199.98px) {
+    form h3 {
+        font-size: 30px;
+    }
+}

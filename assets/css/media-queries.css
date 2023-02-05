@@ -177,6 +177,7 @@
 
     .main-menu {
         display: flex;
+        padding-bottom: 10px;
     }
 
     .top-menu, .bottom-menu {
