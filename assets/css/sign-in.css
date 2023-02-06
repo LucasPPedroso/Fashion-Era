@@ -30,12 +30,10 @@ form input {
 
 .name {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
+    flex-direction: column;
     width: 100%;
-    margin-bottom: 15px;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .name input {
@@ -50,14 +48,17 @@ form input {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 .email input:not([type="checkbox"]) {
-    width: 95%;
-    margin: auto auto 15px auto;
+    width: 100%;
     -webkit-appearance: none;
     border: 1px solid rgba(221, 221, 221);
+}
+
+.email input, .name input {
+    margin: auto auto 15px auto;
 }
 
 .show-password-wrapper {
@@ -115,7 +116,6 @@ form input {
 
 .first-name-wrapper, .last-name-wrapper {
     position: relative;
-    width: calc(50% - 15px);
 }
 
 .email-wrapper, .password-wrapper {
@@ -127,6 +127,7 @@ form input {
     position: absolute;
     top: 0;
     left: 10px;
+    line-height: 23px;
     height: 22px;
     font-size: 13px;
     opacity: 0.5;
@@ -136,6 +137,7 @@ form input {
     pointer-events: none;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin: 3px 0;
 }
 
 input:focus + .first-name,
@@ -156,22 +158,9 @@ input:focus {
     border: 2px solid #5d5d5d !important;
 }
 
-.first-name-wrapper {
-    margin-right: 5px;
-}
-
-.last-name-wrapper {
-    margin-left: 5px;
-}
-
 @media (min-width: 575.98px) {
     form h3 {
         font-size: 20px;
-    }
-
-    .first-name-wrapper, .last-name-wrapper {
-        position: relative;
-        width: calc(50% - 20px);
     }
 }
 
