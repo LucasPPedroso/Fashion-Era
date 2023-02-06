@@ -542,6 +542,11 @@ button {
     border-radius: 1000px;
     font-weight: 700;
     line-height: 21px;
+    transition: all 0.3s;
+}
+
+.adults-off-btn:hover {
+    background-color: #E5E5E5;
 }
 
 .kids-off-container {
@@ -629,6 +634,11 @@ button {
     line-height: 25px;
     padding: 10px 19px;
     margin: 15px auto;
+    transition: all 0.3s;
+}
+
+.kids-off-btn:hover {
+    background-color: #065f5b;
 }
 
 .new-arrivals, .trending-collection {

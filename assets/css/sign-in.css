@@ -25,7 +25,7 @@ form {
 form input {
     background-color: transparent;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 6px 10px;
 }
 
 .name {
@@ -38,7 +38,6 @@ form input {
 
 .name input {
     width: 100%;
-    padding: 5px 10px;
     border: 1px solid rgba(221, 221, 221);
 }
 
@@ -57,12 +56,11 @@ form input {
     border: 1px solid rgba(221, 221, 221);
 }
 
-.email input, .name input {
+.email input:not(input[type="checkbox"]), .name input {
     margin: auto auto 15px auto;
 }
 
 .show-password-wrapper {
-    margin: auto 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -128,9 +126,9 @@ form input {
     top: 0;
     left: 10px;
     line-height: 23px;
-    height: 22px;
-    font-size: 13px;
-    opacity: 0.5;
+    height: 16px;
+    font-size: 12px;
+    opacity: 0.4;
     transition: all 0.3s;
     user-select: none;
     background-color: #F7F7F7;
