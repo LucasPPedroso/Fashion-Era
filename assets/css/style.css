@@ -568,7 +568,7 @@ button {
 
 .kids-off-info,
 .kids-off-img {
-    width: 50%;
+    padding: 0 10px;
 }
 
 .kid-model {
@@ -695,9 +695,19 @@ button {
 
 .btn-active, .arrivals-filter-btn:hover {
     background-color: #FBD103;
-    border: none !important;
+    border-color: transparent;
     color: #323232;
     opacity: 1;
+}
+
+.card-badge button svg {
+    width: 24px;
+    height: 25px;
+}
+
+.photo-badge button svg {
+    width: 25px;
+    height: 24px ;
 }
 
 .arrivals, .collections {
@@ -783,7 +793,6 @@ button {
 .heart-badge, .card-badge, .photo-badge {
     background-color: #FFF;
     border-radius: 100%;
-    padding: 5px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -796,12 +805,21 @@ button {
 }
 
 .heart-badge:hover, .card-badge:hover, .photo-badge:hover {
-    opacity: 0.7;
+    background-color: #d2d2d2;
 }
 
 .heart-badge:active, .card-badge:active, .photo-badge:active {
     background-color: #FBD103;
-    opacity: 1;
+}
+
+.heart-badge button, .card-badge button, .photo-badge button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-badge button svg, .card-badge button svg, .photo-badge button svg {
+    padding: 3px;
 }
 
 
@@ -1234,4 +1252,12 @@ footer {
 
 .help-list-item a:hover, .store-list-item a:hover, .support-list-item a:hover {
     color: #FBD103;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
 }

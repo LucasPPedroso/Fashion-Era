@@ -60,18 +60,16 @@ form input {
     margin: auto auto 15px auto;
 }
 
-.show-password-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    flex-wrap: nowrap;
+.password-wrapper {
+    position: relative;
 }
 
-.show-password-wrapper span {
-    font-weight: bold;
-    font-size: 12px;
-    margin-left: 5px;
+.show-password {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #323232;
+
 }
 
 .help {

@@ -8,4 +8,3 @@ function openMenu() {
     headerMenu.classList.toggle("menu-active");
     document.querySelector("body").classList.toggle("overflow-hidden");
 }
-
