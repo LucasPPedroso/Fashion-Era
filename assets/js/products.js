@@ -10,6 +10,7 @@ const newArrivalsProducts = [
             old: 300,
         },
         off: "40%",
+        tag: "",
         rate: 4,
         sale: 2324,
         qty: 0,
@@ -27,6 +28,7 @@ const newArrivalsProducts = [
             old: 250,
         },
         off: "12%",
+        tag: "",
         rate: 4,
         sale: 2324,
         qty: 0,
@@ -44,6 +46,7 @@ const newArrivalsProducts = [
             old: 350,
         },
         off: "20%",
+        tag: "New",
         rate: 4,
         sale: 2324,
         qty: 0,
@@ -61,6 +64,7 @@ const newArrivalsProducts = [
             old: 150,
         },
         off: "20%",
+        tag: "",
         rate: 4,
         sale: 2324,
         qty: 0,
@@ -73,10 +77,10 @@ const finalArrivalsProducts = newArrivalsProducts.map((product, index) =>
                         <div class="splide__slide ${product.className}-slide ${product.className}-delete">
                             <div class="slide-item ${product.className}">
                                 <div class="slide-img offed-img">
-
-                                    <div class="img-off-badge">
-                                        ${product.off}
-                                    </div>
+                                    
+                                    <div class="img-new-badge">${product.tag !== "" ? product.tag : ""}</div> 
+                                
+                                    <div class="img-off-badge">${product.off}</div>
 
                                     <div class="photo-badges">
                                         <div class="heart-badge">
@@ -278,23 +282,46 @@ const finalTrendingProducts = newTrendingProducts.map((product, index) =>
 
 document.querySelector('.trending-collection-list').innerHTML = finalTrendingProducts.join('');
 
+
+const newBadge = document.querySelectorAll(".img-new-badge");
+
+document.addEventListener("DOMContentLoaded", () => {
+    newBadge.forEach((item) => {
+
+        if (item.innerHTML !== "") {
+            item.style.display = "flex";
+        } else {
+            item.style.cssText = "display: none !important;"
+        }
+    })
+})
+
+
 const finalProductsArray = [];
 
+let localStorageCheck = localStorage.getItem("finalProductsArray");
+
 function saveItemsInLocal(index) {
-    console.log(index)
     const arrivalsProduct = newArrivalsProducts.find((item) => item.id === index);
     finalProductsArray.push(arrivalsProduct);
     console.log(finalProductsArray);
-    localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
+    console.log(localStorageCheck)
+    if (localStorage.getItem("finalProductsArray") === finalProductsArray.find(item => item.id === index.id)) {
+        console.log("doubled")
+        index.qty++
+    } else {
+        localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
+    }
 }
 
 function saveItemsInLocal2(index) {
-    console.log(index)
     const trendingProducts = newTrendingProducts.find((item) => item.id === index);
     finalProductsArray.push(trendingProducts)
     console.log(finalProductsArray)
-    localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
+    if (localStorageCheck.find((product) => product.id && product.title === index.id && index.title)) {
+        console.log("doubled")
+        index.qty++
+    } else {
+        localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
+    }
 }
-
-
-// JSON.parse(localStorage.getItem(JSON.stringify(finalProductsArray)));

@@ -766,9 +766,10 @@ button {
 }
 
 .img-new-badge {
+    /*display: none;*/
     position: absolute;
     top: 10px;
-    left: 10px;
+    right: 10px;
     width: 40px;
     height: 40px;
     background-color: #78C750;
@@ -776,7 +777,7 @@ button {
     color: #fff;
     text-align: center;
     border-radius: 100%;
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
     font-weight: bold;
