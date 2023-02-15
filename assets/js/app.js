@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         menBtn.classList.remove("btn-active");
         womenBtn.classList.remove("btn-active");
         kidsBtn.classList.remove("btn-active");
-        menItems.forEach(item => {
+
+        menItems.forEach((item) => {
             item.classList.add("d-block");
             item.classList.remove("d-none")
         })
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allBtn.classList.remove("btn-active");
         womenBtn.classList.remove("btn-active");
         kidsBtn.classList.remove("btn-active");
+
         menItems.forEach(item => {
             item.classList.add("d-block");
             item.classList.remove("d-none")
@@ -44,10 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-none");
             item.classList.remove("d-block")
         })
-        if (womenItems.style.display === "none" && kidsItems.style.display === "none") {
-            womenItems.parentElement.remove()
-            kidsItems.parentElement.remove()
-        }
     })
 
     womenBtn.addEventListener("click", () => {
@@ -55,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allBtn.classList.remove("btn-active");
         menBtn.classList.remove("btn-active");
         kidsBtn.classList.remove("btn-active");
+
         menItems.forEach(item => {
             item.classList.add("d-none");
             item.classList.remove("d-block")
@@ -67,10 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-block");
             item.classList.remove("d-none")
         })
-        if (womenItems.style.display === "none" && kidsItems.style.display === "none") {
-            menItems.parentElement.remove()
-            kidsItems.parentElement.remove()
-        }
     })
 
     kidsBtn.addEventListener("click", () => {
@@ -78,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allBtn.classList.remove("btn-active");
         menBtn.classList.remove("btn-active");
         womenBtn.classList.remove("btn-active");
+
         menItems.forEach(item => {
             item.classList.add("d-none");
             item.classList.remove("d-block")
@@ -90,12 +86,5 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-none");
             item.classList.remove("d-block")
         })
-        if (womenItems.style.display === "none" && kidsItems.style.display === "none") {
-            womenItems.parentElement.remove()
-            menItems.parentElement.remove()
-        }
     })
-
 })
-
-

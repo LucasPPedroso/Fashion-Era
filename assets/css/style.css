@@ -707,7 +707,7 @@ button {
 
 .photo-badge button svg {
     width: 25px;
-    height: 24px ;
+    height: 24px;
 }
 
 .arrivals, .collections {
@@ -1019,9 +1019,15 @@ button {
     width: calc(50% - 10px);
     overflow: hidden;
     margin: 15px 5px;
+    transition: all 0.3s;
+    opacity: 1;
 }
 
-.brands-logo div img {
+.brands-logo div:hover {
+    opacity: 0.7;
+}
+
+.brands-logo div a img {
     width: 100%;
     padding: 10px;
 }

@@ -1,6 +1,6 @@
 const newArrivalsProducts = [
     {
-        id: 1,
+        id: 0,
         images: ['first-slider_slide1.png'],
         category: "Kids",
         className: "kids",
@@ -17,11 +17,11 @@ const newArrivalsProducts = [
     },
 
     {
-        id: 2,
+        id: 1,
         images: ['first-slider_slide2.png'],
         category: "Women",
-        title: "Ethnic Kurti",
         className: "women",
+        title: "Ethnic Kurti",
         price: {
             new: 220,
             old: 250,
@@ -34,11 +34,11 @@ const newArrivalsProducts = [
     },
 
     {
-        id: 3,
+        id: 2,
         images: ['first-slider_slide3.png'],
         category: "Women",
-        title: "Kurtis, Tunics & Tops",
         className: "women",
+        title: "Kurtis, Tunics & Tops",
         price: {
             new: 280,
             old: 350,
@@ -51,11 +51,11 @@ const newArrivalsProducts = [
     },
 
     {
-        id: 4,
+        id: 3,
         images: ['first-slider_slide4.png'],
         category: "Men",
-        title: "Round Neck T-shirt",
         className: "men",
+        title: "Round Neck T-shirt",
         price: {
             new: 120,
             old: 150,
@@ -68,9 +68,9 @@ const newArrivalsProducts = [
     },
 ];
 
-const finalArrivalsProducts = newArrivalsProducts.map(product =>
+const finalArrivalsProducts = newArrivalsProducts.map((product, index) =>
     `
-                        <div class="splide__slide ${product.className}-slide">
+                        <div class="splide__slide ${product.className}-slide ${product.className}-delete">
                             <div class="slide-item ${product.className}">
                                 <div class="slide-img offed-img">
 
@@ -107,7 +107,7 @@ const finalArrivalsProducts = newArrivalsProducts.map(product =>
                                         </div>
 
                                         <div class="card-badge">
-                                            <button onclick="saveItemsInLocal(${product})">                                        
+                                            <button onclick="saveItemsInLocal(${index})">                                        
                                                 <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -129,7 +129,7 @@ const finalArrivalsProducts = newArrivalsProducts.map(product =>
                                         <p>${product.title}</p>
                                     </div>
                                     <div class="item-price">
-                                        <p>$ ${product.price.new} <span>$ ${product.price.old}</span></p>
+                                        <p>$${product.price.new} <span>$${product.price.old}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -142,11 +142,11 @@ document.querySelector('.new-arrivals-list').innerHTML = finalArrivalsProducts.j
 
 const newTrendingProducts = [
     {
-        id: 5,
+        id: 0,
         images: ['kid model.png'],
         category: "Kids",
-        title: "Kurti Full Sleev",
         className: "kids",
+        title: "Kurti Full Sleev",
         price: {
             new: 200,
             old: 300,
@@ -159,11 +159,11 @@ const newTrendingProducts = [
     },
 
     {
-        id: 6,
+        id: 1,
         images: ['hindi women.png'],
         category: "Women",
-        title: "Silk Saree - Printied ",
         className: "women",
+        title: "Silk Saree - Printied ",
         price: {
             new: 320,
             old: 410,
@@ -176,11 +176,11 @@ const newTrendingProducts = [
     },
 
     {
-        id: 7,
+        id: 2,
         images: ['men model uk.png'],
         category: "Men",
-        title: "Multi Purpose Jacket",
         className: "men",
+        title: "Multi Purpose Jacket",
         price: {
             new: 510,
             old: 705,
@@ -193,11 +193,11 @@ const newTrendingProducts = [
     },
 
     {
-        id: 8,
+        id: 3,
         images: ['men model polo.png'],
         category: "Men",
-        title: "Jacket",
         className: "men",
+        title: "Jacket",
         price: {
             new: 400,
             old: 480,
@@ -211,7 +211,7 @@ const newTrendingProducts = [
 
 ];
 
-const finalTrendingProducts = newTrendingProducts.map(product =>
+const finalTrendingProducts = newTrendingProducts.map((product, index) =>
     `
                         <div class="splide__slide">
                             <div class="slide-item slide-1">
@@ -246,7 +246,7 @@ const finalTrendingProducts = newTrendingProducts.map(product =>
                                         </div>
 
                                         <div class="card-badge">
-                                            <button onclick="saveItemsInLocal(${product})">
+                                            <button onclick="saveItemsInLocal2 (${index})">
                                                 <svg width="24" height="25" viewBox="0 0 21 22" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -268,7 +268,7 @@ const finalTrendingProducts = newTrendingProducts.map(product =>
                                         <p>${product.title}</p>
                                     </div>
                                     <div class="item-price">
-                                        <p>$ ${product.price.new} <span>$ ${product.price.old}</span></p>
+                                        <p>$${product.price.new} <span>$${product.price.old}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -278,14 +278,23 @@ const finalTrendingProducts = newTrendingProducts.map(product =>
 
 document.querySelector('.trending-collection-list').innerHTML = finalTrendingProducts.join('');
 
-// const finalProducts = [];
+const finalProductsArray = [];
 
-function saveItemsInLocal(product) {
-    // finalProducts.push(product);
-    if (!localStorage.getItem("product")) {
-        localStorage.setItem("cardItems", product.toString())
-    }
-    // console.log(finalProducts)
+function saveItemsInLocal(index) {
+    console.log(index)
+    const arrivalsProduct = newArrivalsProducts.find((item) => item.id === index);
+    finalProductsArray.push(arrivalsProduct);
+    console.log(finalProductsArray);
+    localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
 }
 
-console.debug("Debug Message")
+function saveItemsInLocal2(index) {
+    console.log(index)
+    const trendingProducts = newTrendingProducts.find((item) => item.id === index);
+    finalProductsArray.push(trendingProducts)
+    console.log(finalProductsArray)
+    localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
+}
+
+
+// JSON.parse(localStorage.getItem(JSON.stringify(finalProductsArray)));

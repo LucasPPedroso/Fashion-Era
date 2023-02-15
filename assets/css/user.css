@@ -134,6 +134,7 @@ form input {
     text-overflow: ellipsis;
     white-space: nowrap;
     margin: 3px 0;
+    padding: 0 3px;
 }
 
 input:focus + .first-name,
@@ -152,6 +153,10 @@ input:valid + .email-label {
 
 input:focus {
     border: 2px solid #5d5d5d !important;
+}
+
+.forgot-pass {
+    display: none;
 }
 
 @media (min-width: 575.98px) {
