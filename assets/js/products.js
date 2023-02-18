@@ -292,8 +292,13 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-const finalProductsArray = [JSON.parse(localStorage.getItem("final Products"))];
+const finalProductsArray = [];
 
+const localHistory = JSON.parse(localStorage.getItem("final Products"))
+
+finalProductsArray.push(localHistory)
+
+console.log(finalProductsArray)
 const cardBadge = document.querySelectorAll(".card-number-badge")
 document.addEventListener("DOMContentLoaded", () => {
     cardBadge.forEach(item => {
