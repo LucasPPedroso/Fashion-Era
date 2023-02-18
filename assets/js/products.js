@@ -1,4 +1,4 @@
-const newArrivalsProducts = [
+const arrivalsProducts = [
     {
         id: 0,
         images: ['first-slider_slide1.png'],
@@ -12,8 +12,7 @@ const newArrivalsProducts = [
         off: "40%",
         tag: "",
         rate: 4,
-        sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 
@@ -30,8 +29,7 @@ const newArrivalsProducts = [
         off: "12%",
         tag: "",
         rate: 4,
-        sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 
@@ -48,8 +46,7 @@ const newArrivalsProducts = [
         off: "20%",
         tag: "New",
         rate: 4,
-        sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 
@@ -66,13 +63,12 @@ const newArrivalsProducts = [
         off: "20%",
         tag: "",
         rate: 4,
-        sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 ];
 
-const finalArrivalsProducts = newArrivalsProducts.map((product, index) =>
+const showingArrivalsProducts = arrivalsProducts.map((product, index) =>
     `
                         <div class="splide__slide ${product.className}-slide ${product.className}-delete">
                             <div class="slide-item ${product.className}">
@@ -141,12 +137,12 @@ const finalArrivalsProducts = newArrivalsProducts.map((product, index) =>
 `
 );
 
-document.querySelector('.new-arrivals-list').innerHTML = finalArrivalsProducts.join("");
+document.querySelector('.new-arrivals-list').innerHTML = showingArrivalsProducts.join("");
 
 
-const newTrendingProducts = [
+const trendingProducts = [
     {
-        id: 0,
+        id: 4,
         images: ['kid model.png'],
         category: "Kids",
         className: "kids",
@@ -158,12 +154,12 @@ const newTrendingProducts = [
         off: "33%",
         rate: 4,
         sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 
     {
-        id: 1,
+        id: 5,
         images: ['hindi women.png'],
         category: "Women",
         className: "women",
@@ -175,12 +171,12 @@ const newTrendingProducts = [
         off: "22%",
         rate: 4,
         sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 
     {
-        id: 2,
+        id: 6,
         images: ['men model uk.png'],
         category: "Men",
         className: "men",
@@ -192,12 +188,12 @@ const newTrendingProducts = [
         off: "28%",
         rate: 4,
         sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 
     {
-        id: 3,
+        id: 7,
         images: ['men model polo.png'],
         category: "Men",
         className: "men",
@@ -209,13 +205,13 @@ const newTrendingProducts = [
         off: "17%",
         rate: 4,
         sale: 2324,
-        qty: 0,
+        qty: 1,
         total: 0,
     },
 
 ];
 
-const finalTrendingProducts = newTrendingProducts.map((product, index) =>
+const showingTrendingProducts = trendingProducts.map((product, index) =>
     `
                         <div class="splide__slide">
                             <div class="slide-item slide-1">
@@ -250,7 +246,7 @@ const finalTrendingProducts = newTrendingProducts.map((product, index) =>
                                         </div>
 
                                         <div class="card-badge">
-                                            <button onclick="saveItemsInLocal2 (${index})">
+                                            <button onclick="saveItemsInLocal2(${index})">
                                                 <svg width="24" height="25" viewBox="0 0 21 22" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -280,14 +276,13 @@ const finalTrendingProducts = newTrendingProducts.map((product, index) =>
 `
 );
 
-document.querySelector('.trending-collection-list').innerHTML = finalTrendingProducts.join('');
+document.querySelector('.trending-collection-list').innerHTML = showingTrendingProducts.join('');
 
 
 const newBadge = document.querySelectorAll(".img-new-badge");
 
 document.addEventListener("DOMContentLoaded", () => {
     newBadge.forEach((item) => {
-
         if (item.innerHTML !== "") {
             item.style.display = "flex";
         } else {
@@ -299,29 +294,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const finalProductsArray = [];
 
-let localStorageCheck = localStorage.getItem("finalProductsArray");
+const cardBadge = document.querySelectorAll(".card-number-badge")
+document.addEventListener("DOMContentLoaded", () => {
+    cardBadge.forEach(item => {
+        item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
+    })
+})
 
 function saveItemsInLocal(index) {
-    const arrivalsProduct = newArrivalsProducts.find((item) => item.id === index);
-    finalProductsArray.push(arrivalsProduct);
-    console.log(finalProductsArray);
-    console.log(localStorageCheck)
-    if (localStorage.getItem("finalProductsArray") === finalProductsArray.find(item => item.id === index.id)) {
-        console.log("doubled")
-        index.qty++
+    const arrivalsProductsIndex = arrivalsProducts[index];
+    const findDuplicate = finalProductsArray.find(item => item === arrivalsProductsIndex)
+    if (arrivalsProductsIndex === findDuplicate) {
+        console.log("item is duplicated");
+        const itemQtyIncreased = arrivalsProductsIndex.qty++;
+        finalProductsArray.push(itemQtyIncreased)
+        console.log(finalProductsArray)
+        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
     } else {
-        localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
+        finalProductsArray.push(arrivalsProductsIndex)
+        console.log("item added");
+        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
     }
+
+    cardBadge.forEach(item => {
+        item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
+    })
 }
 
+
 function saveItemsInLocal2(index) {
-    const trendingProducts = newTrendingProducts.find((item) => item.id === index);
-    finalProductsArray.push(trendingProducts)
-    console.log(finalProductsArray)
-    if (localStorageCheck.find((product) => product.id && product.title === index.id && index.title)) {
-        console.log("doubled")
-        index.qty++
+    const trendingProductsIndex = trendingProducts[index];
+    const findDuplicate = finalProductsArray.find(item => item === trendingProductsIndex)
+    if (trendingProductsIndex === findDuplicate) {
+        console.log("item is duplicated");
+        const itemQtyIncreased = trendingProductsIndex.qty++;
+        finalProductsArray.push(itemQtyIncreased)
+        console.log(finalProductsArray)
+        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
     } else {
-        localStorage.setItem("finalProductsArray", JSON.stringify(finalProductsArray))
+        finalProductsArray.push(trendingProductsIndex)
+        console.log("item added");
+        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
     }
+    cardBadge.forEach(item => {
+        item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
+    })
 }
+

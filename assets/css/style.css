@@ -136,12 +136,12 @@ button {
     position: relative;
 }
 
-.shopping-card-btn::before {
+.card-number-badge {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    content: "3";
+    content: "";
     top: -5px;
     right: -5px;
     background-color: #FBD103;
@@ -573,8 +573,6 @@ button {
 
 .kid-model {
     width: 100%;
-    height: 100%;
-
 }
 
 .kids-off-bg {
