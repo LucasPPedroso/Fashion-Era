@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-const finalProductsArray = [];
+const finalProductsArray = [JSON.parse(localStorage.getItem("final Products"))];
 
 const cardBadge = document.querySelectorAll(".card-number-badge")
 document.addEventListener("DOMContentLoaded", () => {

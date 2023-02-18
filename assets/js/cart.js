@@ -9,6 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 })
 
+let products = JSON.parse(localStorage.getItem("final Products")).reduce((state, item) => {
+    if (item.type === isNaN) {
+        let newItems = item.delete(item);
+        item = newItems;
+    }
+    return {...state, item};
+})
+
+products.map(item => {
+    console.log("boom baby")
+})
+
 plus.addEventListener("click", () => {
     input.value++;
     minus.style.opacity = "1";
