@@ -340,4 +340,3 @@ function saveItemsInLocal2(index) {
         item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
     })
 }
-
