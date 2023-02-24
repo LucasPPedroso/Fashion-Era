@@ -128,15 +128,15 @@ button {
     box-shadow: 0 2px 2px 0 rgba(212, 210, 210, 0.15);
 }
 
-.shopping-card-btn, .manage-profile, .favorites-btn {
+.shopping-cart-btn, .manage-profile, .favorites-btn {
     margin: 0 10px;
 }
 
-.shopping-card-btn {
+.shopping-cart-btn {
     position: relative;
 }
 
-.card-number-badge {
+.cart-number-badge {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -698,7 +698,7 @@ button {
     opacity: 1;
 }
 
-.card-badge button svg {
+.cart-badge button svg {
     width: 24px;
     height: 25px;
 }
@@ -789,7 +789,7 @@ button {
     z-index: 5;
 }
 
-.heart-badge, .card-badge, .photo-badge {
+.heart-badge, .cart-badge, .photo-badge {
     background-color: #FFF;
     border-radius: 100%;
     width: 30px;
@@ -803,21 +803,21 @@ button {
     cursor: pointer;
 }
 
-.heart-badge:hover, .card-badge:hover, .photo-badge:hover {
+.heart-badge:hover, .cart-badge:hover, .photo-badge:hover {
     background-color: #d2d2d2;
 }
 
-.heart-badge:active, .card-badge:active, .photo-badge:active {
+.heart-badge:active, .cart-badge:active, .photo-badge:active {
     background-color: #FBD103;
 }
 
-.heart-badge button, .card-badge button, .photo-badge button {
+.heart-badge button, .cart-badge button, .photo-badge button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.heart-badge button svg, .card-badge button svg, .photo-badge button svg {
+.heart-badge button svg, .cart-badge button svg, .photo-badge button svg {
     padding: 3px;
 }
 

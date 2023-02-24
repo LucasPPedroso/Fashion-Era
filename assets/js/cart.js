@@ -1,7 +1,7 @@
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
 const input = document.querySelector(".qty-input");
-const cardBadge = document.querySelectorAll(".card-number-badge")
+const cartBadge = document.querySelectorAll(".cart-number-badge")
 
 plus.addEventListener("click", () => {
     input.value++;
@@ -17,7 +17,7 @@ minus.addEventListener("click", () => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-    cardBadge.forEach(item => {
+    cartBadge.forEach(item => {
         item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
     })
 })

@@ -336,7 +336,7 @@
         margin: auto 10px;
     }
 
-    .heart-badge, .card-badge, .photo-badge {
+    .heart-badge, .cart-badge, .photo-badge {
         width: 33px;
         height: 33px;
     }
@@ -347,7 +347,7 @@
         margin: 5px 15px;
     }
 
-    .shopping-card-btn, .manage-profile, .favorites-btn {
+    .shopping-cart-btn, .manage-profile, .favorites-btn {
         margin: 0 15px;
     }
 
@@ -666,7 +666,7 @@
         font-size: 20px;
     }
 
-    .heart-badge, .card-badge, .photo-badge {
+    .heart-badge, .cart-badge, .photo-badge {
         width: 35px;
         height: 35px;
     }

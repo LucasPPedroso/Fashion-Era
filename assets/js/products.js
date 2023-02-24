@@ -106,8 +106,8 @@ const showingArrivalsProducts = arrivalsProducts.map((product, index) =>
                                             </button>
                                         </div>
 
-                                        <div class="card-badge">
-                                            <button onclick="saveItemsInLocal(${index})">                                        
+                                        <div class="cart-badge">
+                                            <button onclick="saveItemsInLocal(${index}, arrivalsProducts)">                                        
                                                 <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -245,8 +245,8 @@ const showingTrendingProducts = trendingProducts.map((product, index) =>
                                         </button>
                                         </div>
 
-                                        <div class="card-badge">
-                                            <button onclick="saveItemsInLocal2(${index})">
+                                        <div class="cart-badge">
+                                            <button onclick="saveItemsInLocal(${index}, trendingProducts)">
                                                 <svg width="24" height="25" viewBox="0 0 21 22" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -279,9 +279,8 @@ const showingTrendingProducts = trendingProducts.map((product, index) =>
 document.querySelector('.trending-collection-list').innerHTML = showingTrendingProducts.join('');
 
 
-const newBadge = document.querySelectorAll(".img-new-badge");
-
 document.addEventListener("DOMContentLoaded", () => {
+    const newBadge = document.querySelectorAll(".img-new-badge");
     newBadge.forEach((item) => {
         if (item.innerHTML !== "") {
             item.style.display = "flex";
@@ -289,59 +288,31 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.cssText = "display: none !important;"
         }
     })
+    updateCardBadge()
 })
 
-
-const finalProductsArray = [];
-
-const localHistory = JSON.parse(localStorage.getItem("final Products"))
-
-finalProductsArray.push(localHistory)
-
-console.log(finalProductsArray)
-const cardBadge = document.querySelectorAll(".card-number-badge")
-document.addEventListener("DOMContentLoaded", () => {
-    cardBadge.forEach(item => {
-        item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
-    })
-})
-
-function saveItemsInLocal(index) {
-    const arrivalsProductsIndex = arrivalsProducts[index];
-    const findDuplicate = finalProductsArray.find(item => item === arrivalsProductsIndex)
-    if (arrivalsProductsIndex === findDuplicate) {
-        console.log("item is duplicated");
-        const itemQtyIncreased = arrivalsProductsIndex.qty++;
-        finalProductsArray.push(itemQtyIncreased)
-        console.log(finalProductsArray)
-        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
-    } else {
-        finalProductsArray.push(arrivalsProductsIndex)
-        console.log("item added");
-        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
-    }
-
-    cardBadge.forEach(item => {
-        item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
+function updateCardBadge() {
+    const cartBadge = document.querySelectorAll(".cart-number-badge")
+    cartBadge.forEach(item => {
+        item.innerHTML = JSON.parse(localStorage.getItem("final products")).length
     })
 }
 
-
-function saveItemsInLocal2(index) {
-    const trendingProductsIndex = trendingProducts[index];
-    const findDuplicate = finalProductsArray.find(item => item === trendingProductsIndex)
-    if (trendingProductsIndex === findDuplicate) {
-        console.log("item is duplicated");
-        const itemQtyIncreased = trendingProductsIndex.qty++;
-        finalProductsArray.push(itemQtyIncreased)
-        console.log(finalProductsArray)
-        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
+function saveItemsInLocal(index, array) {
+    let product = array[index]
+    let localSt = localStorage.getItem("final products");
+    let result = [];
+    if (localSt) {
+        result = JSON.parse(localSt);
+        const foundedProduct = result.find(p => p.id === product.id);
+        if (foundedProduct) {
+            foundedProduct.qty++;
+        } else {
+            result.push(product)
+        }
     } else {
-        finalProductsArray.push(trendingProductsIndex)
-        console.log("item added");
-        localStorage.setItem("final Products", JSON.stringify(finalProductsArray))
+        result.push(product)
     }
-    cardBadge.forEach(item => {
-        item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
-    })
+    localStorage.setItem("final products", JSON.stringify(result));
+    updateCardBadge()
 }
