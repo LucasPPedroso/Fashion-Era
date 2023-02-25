@@ -1,4 +1,11 @@
+let splide1;
 document.addEventListener('DOMContentLoaded', () => {
+
+    splide1 = new Splide('#splide-1', {
+        type: 'loop',
+        clones: false,
+        clonesStatus: false,
+    }).mount();
 
     const allBtn = document.querySelector(".all-btn");
     const menBtn = document.querySelector(".men-btn");
@@ -46,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-none");
             item.classList.remove("d-block")
         })
+        splide1.go(0)
     })
 
     womenBtn.addEventListener("click", () => {
@@ -87,4 +95,5 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.remove("d-block")
         })
     })
+
 })

@@ -70,8 +70,8 @@ const arrivalsProducts = [
 
 const showingArrivalsProducts = arrivalsProducts.map((product, index) =>
     `
-                        <div class="splide__slide ${product.className}-slide ${product.className}-delete">
-                            <div class="slide-item ${product.className}">
+                        <div class="splide__slide ${product.className} ${product.className}-slide">
+                            <div class="slide-item">
                                 <div class="slide-img offed-img">
                                     
                                     <div class="img-new-badge">${product.tag !== "" ? product.tag : ""}</div> 
