@@ -1,11 +1,4 @@
-let splide1;
 document.addEventListener('DOMContentLoaded', () => {
-
-    splide1 = new Splide('#splide-1', {
-        type: 'loop',
-        clones: false,
-        clonesStatus: false,
-    }).mount();
 
     const allBtn = document.querySelector(".all-btn");
     const menBtn = document.querySelector(".men-btn");
