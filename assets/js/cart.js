@@ -1,7 +1,14 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const cartBadge = document.querySelectorAll(".cart-number-badge")
+    const getLocal = JSON.parse(localStorage.getItem("final products"));
+    cartBadge.forEach(item => {
+        getLocal ? item.innerHTML = JSON.parse(localStorage.getItem("final products")).length : item.innerHTML = '0';
+    })
+})
+
 const plus = document.querySelector(".plus");
 const minus = document.querySelector(".minus");
 const input = document.querySelector(".qty-input");
-const cartBadge = document.querySelectorAll(".cart-number-badge")
 
 plus.addEventListener("click", () => {
     input.value++;
@@ -15,23 +22,4 @@ minus.addEventListener("click", () => {
         minus.style.opacity = "0.4";
     }
 })
-
-document.addEventListener("DOMContentLoaded", () => {
-    cartBadge.forEach(item => {
-        item.innerHTML = JSON.parse(localStorage.getItem("final Products")).length
-    })
-})
-
-let products = JSON.parse(localStorage.getItem("final Products")).reduce((state, item) => {
-    if (item.type === isNaN) {
-        let newItems = item.delete(item);
-        item = newItems;
-    }
-    return {...state, item};
-})
-
-products.map(item => {
-    console.log("boom baby")
-})
-
 

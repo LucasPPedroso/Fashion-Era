@@ -288,13 +288,14 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.cssText = "display: none !important;"
         }
     })
-    updateCardBadge()
+    updateCartBadge()
 })
 
-function updateCardBadge() {
+function updateCartBadge() {
     const cartBadge = document.querySelectorAll(".cart-number-badge")
+    const getLocal = JSON.parse(localStorage.getItem("final products"));
     cartBadge.forEach(item => {
-        item.innerHTML = JSON.parse(localStorage.getItem("final products")).length
+        getLocal ? item.innerHTML = JSON.parse(localStorage.getItem("final products")).length : item.innerHTML = '0';
     })
 }
 
@@ -314,5 +315,5 @@ function saveItemsInLocal(index, array) {
         result.push(product)
     }
     localStorage.setItem("final products", JSON.stringify(result));
-    updateCardBadge()
+    updateCartBadge()
 }

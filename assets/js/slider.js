@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    splide1 = new Splide('#splide-1', {
+    new Splide('#splide-1', {
         type: 'loop',
         clones: false,
         clonesStatus: false,
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    splide2 = new Splide('#splide-2', {
+    new Splide('#splide-2', {
         type: 'loop',
     }).mount();
 });
