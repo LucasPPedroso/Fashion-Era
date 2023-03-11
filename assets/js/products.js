@@ -70,7 +70,7 @@ const arrivalsProducts = [
 
 const showingArrivalsProducts = arrivalsProducts.map((product, index) =>
     `
-                        <div class="splide__slide ${product.className} ${product.className}-slide">
+                        <div class="splide__slide ${product.className}">
                             <div class="slide-item">
                                 <div class="slide-img offed-img">
                                     

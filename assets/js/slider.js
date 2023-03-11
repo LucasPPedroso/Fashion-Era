@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#splide-1', {
+    splide1 = new Splide('#splide-1', {
         type: 'loop',
-        clones: false,
-        clonesStatus: false,
+        clones: 4,
+        focus: 0,
     }).mount();
 });
 
@@ -19,3 +19,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount();
 });
 
+export let splide1;

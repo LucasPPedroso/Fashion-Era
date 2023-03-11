@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+import {splide1} from "./slider.js";
 
+document.addEventListener('DOMContentLoaded', () => {
     const allBtn = document.querySelector(".all-btn");
     const menBtn = document.querySelector(".men-btn");
     const womenBtn = document.querySelector(".women-btn");
@@ -26,9 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-block");
             item.classList.remove("d-none")
         })
+        splide1.options = {
+            clones: 4,
+        };
     })
 
     menBtn.addEventListener("click", () => {
+
         menBtn.classList.add("btn-active");
         allBtn.classList.remove("btn-active");
         womenBtn.classList.remove("btn-active");
@@ -46,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-none");
             item.classList.remove("d-block")
         })
-        splide1.go(0)
+        splide1.options = {
+            clones: 0,
+        }
     })
 
     womenBtn.addEventListener("click", () => {
@@ -67,6 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-block");
             item.classList.remove("d-none")
         })
+        splide1.options = {
+            clones: 0,
+        }
+        // const filtered = splide1.Components.Slides.filter(({slide}) => slide.classList.contains("women"));
+        // const all = splide1.Components.Slides.filter(x => true)
+        // console.log(splide1)
+        // console.log(filtered)
+        // console.log(all)
     })
 
     kidsBtn.addEventListener("click", () => {
@@ -87,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.add("d-none");
             item.classList.remove("d-block")
         })
+        splide1.options = {
+            clones: 0,
+        }
     })
-
 })
