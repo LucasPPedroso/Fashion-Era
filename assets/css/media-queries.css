@@ -174,9 +174,8 @@
         height: 49px;
     }
 
-    .cart-body, .cart-item {
+    .cart-item {
         flex-direction: row;
-        align-items: flex-start;
     }
 
     .item-img {
@@ -185,7 +184,6 @@
 
     .cart-item-name {
         margin-top: 0;
-        margin-bottom: 30%;
     }
 
 
@@ -339,6 +337,10 @@
     .heart-badge, .cart-badge, .photo-badge {
         width: 33px;
         height: 33px;
+    }
+
+    .item-name p, .trash {
+        font-size: 17px;
     }
 }
 
@@ -510,8 +512,8 @@
     }
 
     .footer-info {
-    width: 30%;
-    margin: auto 20px auto 0;
+        width: 30%;
+        margin: auto 20px auto 0;
     }
 
     .plus, .minus {
@@ -669,6 +671,10 @@
     .heart-badge, .cart-badge, .photo-badge {
         width: 35px;
         height: 35px;
+    }
+
+    .item-img {
+        width: 30%;
     }
 }
 

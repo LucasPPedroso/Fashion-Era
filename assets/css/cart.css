@@ -22,7 +22,7 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.cart-header {
+.cart-header-wrapper {
     border-bottom: 1px solid rgba(221, 221, 221, 0.5);
     margin-bottom: 20px;
 }
@@ -36,10 +36,13 @@ input[type=number] {
 }
 
 .cart-item {
+    position: relative;
     border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+    margin-bottom: 20px;
+    padding-bottom: 5px;
 }
 
-.item-img  {
+.item-img {
     width: 50%;
     border-radius: 10px;
 }
@@ -55,6 +58,8 @@ input[type=number] {
 
 .item-qty {
     margin-bottom: 15px;
+    position: absolute;
+    bottom: 0;
 }
 
 input[type="number"] {
@@ -86,4 +91,13 @@ input[type="number"] {
 
 .trash:hover {
     color: #fb0303;
+}
+
+.item-price {
+    margin-bottom: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
